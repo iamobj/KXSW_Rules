@@ -272,7 +272,7 @@ rules:
   # Global Area Network
 
   # (Streaming Media)
-  - RULE-SET,Streaming,Streaming
+  - RULE-SET,Streaming,PROXY
 
   # (DNS Cache Pollution) / (IP Blackhole) / (Region-Restricted Access Denied) / (Network Jitter)
   - RULE-SET,Global,PROXY
