@@ -205,8 +205,8 @@ proxy-groups:
     proxies:
     use:
     url: 'http://www.gstatic.com/generate_204'
-    # 6000秒后重新测试延迟
-    interval: 6000
+    # 3600秒后重新测试延迟
+    interval: 3600
     # 延迟差距宽容值，延迟差距50以内不切换
     tolerance: 50
 
@@ -239,7 +239,7 @@ rule-providers:
     behavior: classical
     path: ./RuleSet/Unbreak.yaml
     url: https://raw.githubusercontent.com/iamobj/KXSW_Rules/m/Clash/RuleSet/Unbreak.yaml
-    interval: 604800
+    interval: 86400
 
   # 国外流媒体
   Streaming:
@@ -247,7 +247,7 @@ rule-providers:
     behavior: classical
     path: ./RuleSet/StreamingMedia/Streaming.yaml
     url: https://raw.githubusercontent.com/iamobj/KXSW_Rules/m/Clash/RuleSet/StreamingMedia/Streaming.yaml
-    interval: 604800
+    interval: 86400
 
   # 需要代理的
   Global:
