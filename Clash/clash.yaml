@@ -245,8 +245,8 @@ rule-providers:
   Streaming:
     type: http
     behavior: classical
-    path: ./RuleSet/StreamingMedia/Streaming.yaml
-    url: https://raw.githubusercontent.com/iamobj/KXSW_Rules/m/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    path: ./RuleSet/Streaming.yaml
+    url: https://raw.githubusercontent.com/iamobj/KXSW_Rules/m/Clash/RuleSet/Streaming.yaml
     interval: 86400
 
   # 需要代理的
