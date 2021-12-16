@@ -223,6 +223,8 @@ proxy-groups:
       - PROXY
       - DIRECT
 
+# 使用jsdelivr加速访问github资源，但需要注意缓存，jsdelivr 缓存会在24小时内刷新，并不是实时刷新，可以把 https://cdn.jsdelivr.net/ 换成 https://purge.jsdelivr.net/ 访问可达到手动刷新缓存
+
 # 关于 Rule Provider 请查阅：https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
 
 rule-providers:
@@ -238,7 +240,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Unbreak.yaml
-    url: https://raw.githubusercontent.com/iamobj/KXSW_Rules/m/Clash/RuleSet/Unbreak.yaml
+    url: https://cdn.jsdelivr.net/gh/iamobj/KXSW_Rules@m/Clash/RuleSet/Unbreak.yaml
     interval: 86400
 
   # 国外流媒体
@@ -246,7 +248,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Streaming.yaml
-    url: https://raw.githubusercontent.com/iamobj/KXSW_Rules/m/Clash/RuleSet/Streaming.yaml
+    url: https://cdn.jsdelivr.net/gh/iamobj/KXSW_Rules@m/Clash/RuleSet/Streaming.yaml
     interval: 86400
 
   # 需要代理的
@@ -254,14 +256,14 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Global.yaml
-    url: https://raw.githubusercontent.com/iamobj/KXSW_Rules/m/Clash/RuleSet/Global.yaml
+    url: https://cdn.jsdelivr.net/gh/iamobj/KXSW_Rules@m/Clash/RuleSet/Global.yaml
     interval: 86400
 
   China:
     type: http
     behavior: classical
     path: ./RuleSet/China.yaml
-    url: https://raw.githubusercontent.com/iamobj/KXSW_Rules/m/Clash/RuleSet/China.yaml
+    url: https://cdn.jsdelivr.net/gh/iamobj/KXSW_Rules@m/Clash/RuleSet/China.yaml
     interval: 86400
 
 # 规则
