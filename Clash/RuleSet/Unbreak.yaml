@@ -44,4 +44,6 @@ payload:
   - DOMAIN,msg.umeng.com
   - DOMAIN,msg.umengcloud.com
   # pt 客户端
-  - SRC-IP-CIDR,192.168.50.119/32,DIRECT
+  - SRC-IP-CIDR,192.168.50.119/32
+  # frp 域名
+  - DOMAIN,f.e8q.cn
