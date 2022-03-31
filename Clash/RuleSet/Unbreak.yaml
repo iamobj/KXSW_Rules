@@ -48,3 +48,4 @@ payload:
   # frp 域名
   - DOMAIN,f.e8q.cn
   - DOMAIN-SUFFIX,bing.com
+  - DOMAIN-SUFFIX,neevo.ai
