@@ -259,11 +259,11 @@ rule-providers:
     url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Global.yaml
     interval: 86400
 
-  ChinaIp:
+  ChinaIP:
     type: http
     behavior: classical
-    path: ./RuleSet/ChinaIp.yaml
-    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/ChinaIp.yaml
+    path: ./RuleSet/ChinaIP.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/ChinaIP.yaml
     interval: 86400
 
   China:
