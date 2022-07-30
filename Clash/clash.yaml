@@ -288,7 +288,7 @@ rules:
 
   # China Area Network
   - RULE-SET,China,DIRECT
-  - RULE-SET,ChinaIp,DIRECT
+  - RULE-SET,ChinaIP,DIRECT
 
   # Local Area Network
   - IP-CIDR,192.168.0.0/16,DIRECT
