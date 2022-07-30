@@ -259,6 +259,13 @@ rule-providers:
     url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Global.yaml
     interval: 86400
 
+  ChinaIp:
+    type: http
+    behavior: classical
+    path: ./RuleSet/ChinaIp.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/ChinaIp.yaml
+    interval: 86400
+
   China:
     type: http
     behavior: classical
@@ -281,6 +288,7 @@ rules:
 
   # China Area Network
   - RULE-SET,China,DIRECT
+  - RULE-SET,ChinaIp,DIRECT
 
   # Local Area Network
   - IP-CIDR,192.168.0.0/16,DIRECT
@@ -294,7 +302,7 @@ rules:
   # Tencent
   - IP-CIDR,119.28.28.28/32,DIRECT
   - IP-CIDR,182.254.116.0/24,DIRECT
-  # GeoIP China
-  - GEOIP,CN,DIRECT
+  # GeoIP China   好多国外服务的 ip 也会被归属到 CN 导致直连，注释掉
+  # - GEOIP,CN,DIRECT
 
   - MATCH,MATCH
