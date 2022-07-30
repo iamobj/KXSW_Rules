@@ -261,7 +261,7 @@ rule-providers:
 
   ChinaIP:
     type: http
-    behavior: classical
+    behavior: ipcidr
     path: ./RuleSet/ChinaIP.yaml
     url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/ChinaIP.yaml
     interval: 86400
