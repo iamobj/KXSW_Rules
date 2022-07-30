@@ -240,7 +240,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Unbreak.yaml
-    url: https://raw-github.iamc.workers.dev/iamobj/KXSW_Rules/m/Clash/RuleSet/Unbreak.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Unbreak.yaml
     interval: 86400
 
   # 国外流媒体
@@ -248,7 +248,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Streaming.yaml
-    url: https://raw-github.iamc.workers.dev/iamobj/KXSW_Rules/m/Clash/RuleSet/Streaming.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Streaming.yaml
     interval: 86400
 
   # 需要代理的
@@ -256,14 +256,14 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Global.yaml
-    url: https://raw-github.iamc.workers.dev/iamobj/KXSW_Rules/m/Clash/RuleSet/Global.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Global.yaml
     interval: 86400
 
   China:
     type: http
     behavior: classical
     path: ./RuleSet/China.yaml
-    url: https://raw-github.iamc.workers.dev/iamobj/KXSW_Rules/m/Clash/RuleSet/China.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/China.yaml
     interval: 86400
 
 # 规则
