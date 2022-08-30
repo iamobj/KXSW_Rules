@@ -49,3 +49,5 @@ payload:
   - DOMAIN,f.e8q.cn
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,neevo.ai
+  # 其它
+  - DOMAIN-SUFFIX,nunuyy2.org
