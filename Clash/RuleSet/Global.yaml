@@ -636,6 +636,7 @@ payload:
   - DOMAIN-SUFFIX,gofrp.org
   - DOMAIN-SUFFIX,prisma.io
   - DOMAIN-SUFFIX,stylelint.io
+  - DOMAIN-SUFFIX,taipuxi.cn
 
   # 领英
   - DOMAIN-SUFFIX,licdn.com
