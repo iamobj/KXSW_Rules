@@ -45,7 +45,6 @@ payload:
   # pt 客户端
   - SRC-IP-CIDR,192.168.50.119/32
   # 自己添加的
-  - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,neevo.ai
   # 其它
   - DOMAIN-SUFFIX,nunuyy2.org
