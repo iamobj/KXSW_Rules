@@ -638,6 +638,7 @@ payload:
   - DOMAIN-SUFFIX,stylelint.io
   - DOMAIN-SUFFIX,taipuxi.cn
   - DOMAIN-SUFFIX,ezc.e8q.cn
+  - DOMAIN-SUFFIX,msftconnecttest.com
 
   # 领英
   - DOMAIN-SUFFIX,licdn.com
