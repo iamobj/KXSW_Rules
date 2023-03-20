@@ -639,6 +639,7 @@ payload:
   - DOMAIN-SUFFIX,taipuxi.cn
   - DOMAIN-SUFFIX,ezc.e8q.cn
   - DOMAIN-SUFFIX,msftconnecttest.com
+  - DOMAIN-SUFFIX,bing.net
 
   # 领英
   - DOMAIN-SUFFIX,licdn.com
