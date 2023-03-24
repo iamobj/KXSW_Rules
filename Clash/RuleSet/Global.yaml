@@ -640,6 +640,7 @@ payload:
   - DOMAIN-SUFFIX,ezc.e8q.cn
   - DOMAIN-SUFFIX,msftconnecttest.com
   - DOMAIN-SUFFIX,bing.net
+  - DOMAIN-SUFFIX,clarity.ms
 
   # 领英
   - DOMAIN-SUFFIX,licdn.com
