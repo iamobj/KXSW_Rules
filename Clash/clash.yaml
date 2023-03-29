@@ -97,7 +97,7 @@ dns:
   enhanced-mode: redir-host # or fake-ip
   fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
   # use-hosts: true # lookup hosts and return IP record
-  
+
   # Hostnames in this list will not be resolved with fake IPs
   # i.e. questions to these domain names will always be answered with their
   # real IP addresses
@@ -115,7 +115,7 @@ dns:
     - '*.battlenet.com'
     - '*.blzstatic.cn'
     - '*.battle.net'
-  
+
   # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
   # All DNS questions are sent directly to the nameserver, without proxies
   # involved. Clash answers the DNS question with the first result gathered.
@@ -154,7 +154,7 @@ dns:
   #     - '+.google.com'
   #     - '+.facebook.com'
   #     - '+.youtube.com'
-  
+
   # Lookup domains via specific nameservers
   # nameserver-policy:
   #   'www.baidu.com': '114.114.114.114'
@@ -184,40 +184,38 @@ proxy-providers:
   #   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
   #   health-check: # 健康检查选项从此处开始
   #     enable:
-  #     url: 
-  #     interval: 
+  #     url:
+  #     interval:
 
   #
   # 「url」参数填写订阅链接
   #
   # 订阅链接可以使用 API 进行转换，如：https://dove.589669.xyz/web
-  
-proxy-groups:
-#
-# 策略组说明
-#
-# 「PROXY」是代理规则策略，它可以指定为某个节点或嵌套一个其他策略组，如：「自动测试」、「Fallback」或「负载均衡」的策略组，关于这 3 个策略组的具体示例可以看官方示例：https://github.com/Dreamacro/clash
-#
 
-  # url-test 通过指定的 URL 测试并选择延迟最低的节点
-  - name: "自动节点选择"
-    type: url-test
+proxy-groups:
+  #
+  # 策略组说明
+  #
+  # 「PROXY」是代理规则策略，它可以指定为某个节点或嵌套一个其他策略组，如：「自动测试」、「Fallback」或「负载均衡」的策略组，关于这 3 个策略组的具体示例可以看官方示例：https://github.com/Dreamacro/clash
+  #
+
+  # 自动选择第一个，当第一个节点不可用时，自动选择下一个
+  - name: '自动节点选择'
+    type: fallback
     proxies:
     use:
     url: 'http://www.gstatic.com/generate_204'
     # 3600秒后重新测试延迟
     interval: 3600
-    # 延迟差距宽容值，延迟差距50以内不切换
-    tolerance: 50
 
   # 代理节点选择
-  - name: "PROXY"
+  - name: 'PROXY'
     type: select
     use:
     proxies:
       - 自动节点选择
 
-  - name: "MATCH"
+  - name: 'MATCH'
     type: select
     proxies:
       - PROXY
@@ -228,12 +226,12 @@ proxy-groups:
 # 关于 Rule Provider 请查阅：https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
 
 rule-providers:
-# name: # Provider 名称
-#   type: http # http 或 file
-#   behavior: classical # 或 ipcidr、domain
-#   path: # 文件路径
-#   url: # 只有当类型为 HTTP 时才可用，您不需要在本地空间中创建新文件。
-#   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
+  # name: # Provider 名称
+  #   type: http # http 或 file
+  #   behavior: classical # 或 ipcidr、domain
+  #   path: # 文件路径
+  #   url: # 只有当类型为 HTTP 时才可用，您不需要在本地空间中创建新文件。
+  #   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
 
   # 需要直连的
   Unbreak:
@@ -298,7 +296,7 @@ rules:
   - IP-CIDR,100.64.0.0/10,DIRECT
   - IP-CIDR,224.0.0.0/4,DIRECT
   - IP-CIDR,fe80::/10,DIRECT
-  
+
   # Tencent
   - IP-CIDR,119.28.28.28/32,DIRECT
   - IP-CIDR,182.254.116.0/24,DIRECT
