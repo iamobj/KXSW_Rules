@@ -204,7 +204,8 @@ proxy-groups:
     type: fallback
     proxies:
     use:
-    url: 'http://www.gstatic.com/generate_204'
+    # url: 'http://www.gstatic.com/generate_204'
+    url: 'http://www.apple.com/library/test/success.html'
     # 120秒后重新测试延迟
     interval: 120
 
