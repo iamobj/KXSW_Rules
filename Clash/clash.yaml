@@ -23,7 +23,7 @@ mixed-port: 7890
 
 # Set to true to allow connections to the local-end server from
 # other LAN IP addresses
-allow-lan: true
+allow-lan: true # 允许局域网的连接（共享代理）
 
 # This is only applicable when `allow-lan` is `true`
 # '*': bind all IP addresses
@@ -45,7 +45,7 @@ log-level: info
 ipv6: false
 
 # RESTful web API listening address
-external-controller: 127.0.0.1:9090
+external-controller: 127.0.0.1:9399
 
 # A relative path to the configuration directory or an absolute path to a
 # directory in which you put some static web resource. Clash core will then
@@ -66,16 +66,11 @@ external-controller: 127.0.0.1:9090
 # Non-wildcard domain names have a higher priority than wildcard domain names
 # e.g. foo.example.com > *.example.com > .example.com
 # P.S. +.foo.com equals to .foo.com and foo.com
-hosts:
+hosts:# 本地 dns 解析，和系统 hosts 一样，优先级高于 dns 服务器，use-hosts:
+  true 时生效
   # '*.clash.dev': 127.0.0.1
   # '.dev': 127.0.0.1
   # 'alpha.clash.dev': '::1'
-
-  # Firebase Cloud Messaging
-  'mtalk.google.com': 108.177.125.188
-  # Google Dl
-  'dl.google.com': 180.163.151.161
-  'dl.l.google.com': 180.163.151.161
 
 profile:
   # Store the `select` results in $HOME/.config/clash/.cache
@@ -83,25 +78,29 @@ profile:
   # when two different configurations have groups with the same name, the selected values are shared
   store-selected: false
 
+  # persistence fakeip
+  # store-fake-ip: false
+
 # DNS server settings
 # This section is optional. When not present, the DNS server will be disabled.
 dns:
-  enable: false
+  enable: true
   listen: 0.0.0.0:53
   # ipv6: false # when the false, response to AAAA questions will be empty
 
   # These nameservers are used to resolve the DNS nameserver hostnames below.
   # Specify IP addresses only
-  default-nameserver:
+  default-nameserver: # 解析 nameserver 里非 IP 的 dns 用的 dns 服务器，只支持纯 IP
+    - 223.5.5.5
     - 119.29.29.29
-  enhanced-mode: redir-host # or fake-ip
-  fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR. fake ip 伪装的 ip 段范围
   # use-hosts: true # lookup hosts and return IP record
 
   # Hostnames in this list will not be resolved with fake IPs
   # i.e. questions to these domain names will always be answered with their
   # real IP addresses
-  fake-ip-filter:
+  fake-ip-filter: # Fake-ip 过滤，列表中的域名返回真实IP，不使用伪装IP
     - '*.lan'
     - localhost.ptlogin2.qq.com
     - '+.srv.nintendo.net'
@@ -110,17 +109,21 @@ dns:
     - '+.msftncsi.com'
     - '+.xboxlive.com'
     - 'msftconnecttest.com'
+    - 'xbox.*.*.microsoft.com'
     - 'xbox.*.microsoft.com'
     - '*.battlenet.com.cn'
     - '*.battlenet.com'
     - '*.blzstatic.cn'
     - '*.battle.net'
+    - 'lens.l.google.com'
+    - '*.mcdn.bilivideo.cn'
 
   # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
   # All DNS questions are sent directly to the nameserver, without proxies
   # involved. Clash answers the DNS question with the first result gathered.
-  nameserver:
-    - 119.29.29.29
+  nameserver: # 这里最好使用公共 dns 服务器，不使用运营商的 dns 服务器，防止 dns 污染
+    - https://223.5.5.5/dns-query # 使用 DoH 加密 DNS 查询，这里使用 ip 地址，不使用域名，可以避免使用 default-nameserver 解析域名这个动作
+    - https://1.12.12.12/dns-query
     # - 114.114.114.114 # default value
     # - 8.8.8.8 # default value
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
@@ -131,6 +134,8 @@ dns:
   # to the servers in this section along with servers in `nameservers`.
   # The answers from fallback servers are used when the GEOIP country
   # is not `CN`.
+  # fallback 解释： https://github.com/Dreamacro/clash/issues/968#:~:text=tcp%20%E8%AF%B7%E6%B1%82%0A2.-,%E8%8B%A5%E5%B0%86clash%E7%9A%84dns%E9%85%8D%E7%BD%AE%E4%B8%BAfake%2Dip%E6%A8%A1%E5%BC%8F,-%EF%BC%8Cfallback%2Dfilter%E4%B8%AD
+  # 是搭配 fallback-filter 使用的，fallback-filter 会根据 ip 地址的地理位置，判断是否使用 fallback 里的 dns 服务器，如果 namespace 确保不会返回污染的 dns 结果，可以不用 fallback
   # fallback:
   #   - tcp://1.1.1.1
 
@@ -156,7 +161,7 @@ dns:
   #     - '+.youtube.com'
 
   # Lookup domains via specific nameservers
-  # nameserver-policy:
+  # nameserver-policy: # 指定域名使用指定的 dns 服务器解析，不使用默认的 dns 服务器
   #   'www.baidu.com': '114.114.114.114'
   #   '+.internal.crop.com': '10.0.0.1'
 
@@ -287,20 +292,20 @@ rules:
 
   # China Area Network
   - RULE-SET,China,DIRECT
-  - RULE-SET,ChinaIP,DIRECT
+  # - RULE-SET,ChinaIP,DIRECT
 
   # Local Area Network
-  - IP-CIDR,192.168.0.0/16,DIRECT
-  - IP-CIDR,10.0.0.0/8,DIRECT
-  - IP-CIDR,172.16.0.0/12,DIRECT
-  - IP-CIDR,127.0.0.0/8,DIRECT
-  - IP-CIDR,100.64.0.0/10,DIRECT
-  - IP-CIDR,224.0.0.0/4,DIRECT
-  - IP-CIDR,fe80::/10,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR,fe80::/10,DIRECT,no-resolve
 
   # Tencent
-  - IP-CIDR,119.28.28.28/32,DIRECT
-  - IP-CIDR,182.254.116.0/24,DIRECT
+  - IP-CIDR,119.28.28.28/32,DIRECT,no-resolve
+  - IP-CIDR,182.254.116.0/24,DIRECT,no-resolve
   # GeoIP China   好多国外服务的 ip 也会被归属到 CN 导致直连，注释掉
   # - GEOIP,CN,DIRECT
 
