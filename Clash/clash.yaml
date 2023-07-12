@@ -119,6 +119,7 @@ dns:
     - '*.mcdn.bilivideo.cn'
     - '+.openai.com'
     - '+.sentry.io'
+    - '+.imgur.com'
 
   # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
   # All DNS questions are sent directly to the nameserver, without proxies
