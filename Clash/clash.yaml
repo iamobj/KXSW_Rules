@@ -312,4 +312,7 @@ rules:
   # GeoIP China   好多国外服务的 ip 也会被归属到 CN 导致直连，注释掉
   # - GEOIP,CN,DIRECT
 
+  # myy 开发机
+  - IP-CIDR,218.245.97.4/32,DIRECT,no-resolve
+
   - MATCH,MATCH
