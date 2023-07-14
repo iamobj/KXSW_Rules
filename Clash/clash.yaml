@@ -101,25 +101,26 @@ dns:
   # i.e. questions to these domain names will always be answered with their
   # real IP addresses
   fake-ip-filter: # Fake-ip 过滤，列表中的域名返回真实IP，不使用伪装IP
-    - '*.lan'
-    - localhost.ptlogin2.qq.com
-    - '+.srv.nintendo.net'
-    - '+.stun.playstation.net'
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
-    - '+.xboxlive.com'
-    - 'msftconnecttest.com'
-    - 'xbox.*.*.microsoft.com'
-    - 'xbox.*.microsoft.com'
-    - '*.battlenet.com.cn'
-    - '*.battlenet.com'
-    - '*.blzstatic.cn'
-    - '*.battle.net'
-    - 'lens.l.google.com'
-    - '*.mcdn.bilivideo.cn'
-    - '+.openai.com'
-    - '+.sentry.io'
-    - '+.imgur.com'
+    - '*' # 通配符，所有域名都返回真实IP
+    # - '*.lan'
+    # - localhost.ptlogin2.qq.com
+    # - '+.srv.nintendo.net'
+    # - '+.stun.playstation.net'
+    # - '+.msftconnecttest.com'
+    # - '+.msftncsi.com'
+    # - '+.xboxlive.com'
+    # - 'msftconnecttest.com'
+    # - 'xbox.*.*.microsoft.com'
+    # - 'xbox.*.microsoft.com'
+    # - '*.battlenet.com.cn'
+    # - '*.battlenet.com'
+    # - '*.blzstatic.cn'
+    # - '*.battle.net'
+    # - 'lens.l.google.com'
+    # - '*.mcdn.bilivideo.cn'
+    # - '+.openai.com'
+    # - '+.sentry.io'
+    # - '+.imgur.com'
 
   # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
   # All DNS questions are sent directly to the nameserver, without proxies
