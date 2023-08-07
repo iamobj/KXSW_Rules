@@ -214,8 +214,8 @@ proxy-groups:
     use:
     # url: 'http://www.gstatic.com/generate_204'
     url: 'http://www.apple.com/library/test/success.html'
-    # 120秒后重新测试延迟
-    interval: 120
+    # 600秒后重新测试延迟
+    interval: 600
 
   # 代理节点选择
   - name: 'PROXY'
