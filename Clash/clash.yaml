@@ -280,6 +280,14 @@ rule-providers:
     url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/China.yaml
     interval: 86400
 
+  # 广告
+  Ad:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Ad.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Ad.yaml
+    interval: 86400
+
 # 规则
 rules:
   # Unbreak
@@ -296,6 +304,8 @@ rules:
   # China Area Network
   - RULE-SET,China,DIRECT
   # - RULE-SET,ChinaIP,DIRECT
+
+  - RULE-SET,Ad,REJECT
 
   # Local Area Network
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
