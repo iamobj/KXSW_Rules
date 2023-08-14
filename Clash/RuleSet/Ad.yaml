@@ -68,6 +68,10 @@ payload:
   - DOMAIN-SUFFIX,m-78.jp
   - DOMAIN-SUFFIX,nichibenren.or.jp
   - DOMAIN-SUFFIX,nicorette.co.kr
+  - DOMAIN-SUFFIX,.ads.youtube.com
+  - DOMAIN-SUFFIX,.youtube.local
+  - DOMAIN-SUFFIX,.youtubecenter.net
+  - DOMAIN-SUFFIX,.youtubem.shop
   # 广告联盟
   - DOMAIN-SUFFIX,doubleclick.net
   - DOMAIN-SUFFIX,zhihu-analytics.zhihu.com
