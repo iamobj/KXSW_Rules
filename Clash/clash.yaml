@@ -290,6 +290,9 @@ rule-providers:
 
 # 规则
 rules:
+  # 广告规则拒绝，放在最前面，clash 会按照顺序匹配，匹配到就不会再往下匹配了
+  - RULE-SET,Ad,REJECT
+
   # Unbreak
   - RULE-SET,Unbreak,DIRECT
 
@@ -304,8 +307,6 @@ rules:
   # China Area Network
   - RULE-SET,China,DIRECT
   # - RULE-SET,ChinaIP,DIRECT
-
-  - RULE-SET,Ad,REJECT
 
   # Local Area Network
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
