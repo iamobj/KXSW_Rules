@@ -206,22 +206,16 @@ proxy-groups:
   #
   # 「PROXY」是代理规则策略，它可以指定为某个节点或嵌套一个其他策略组，如：「自动测试」、「Fallback」或「负载均衡」的策略组，关于这 3 个策略组的具体示例可以看官方示例：https://github.com/Dreamacro/clash
   #
-  # fallback-自动选择第一个，当第一个节点不可用时，自动选择下一个
 
-  - name: 自动节点选择
-    type: url-test
+  # 自动选择第一个，当第一个节点不可用时，自动选择下一个
+  - name: '自动节点选择'
+    type: fallback
     proxies:
-    url: 'http://www.apple.com/library/test/success.html'
-    interval: 120
-    # 10s 容差
-    tolerance: 10000
-    # type: fallback
-    # proxies:
-    # use:
-    # # url: 'http://www.gstatic.com/generate_204'
+    use:
+    url: 'http://www.gstatic.com/generate_204'
     # url: 'http://www.apple.com/library/test/success.html'
-    # # 600秒后重新测试延迟
-    # interval: 600
+    # 300秒后重新测试延迟
+    interval: 300
 
   # 代理节点选择
   - name: 'PROXY'
@@ -296,9 +290,6 @@ rule-providers:
 
 # 规则
 rules:
-  # 广告规则拒绝，放在最前面，clash 会按照顺序匹配，匹配到就不会再往下匹配了
-  - RULE-SET,Ad,REJECT
-
   # Unbreak
   - RULE-SET,Unbreak,DIRECT
 
@@ -313,6 +304,8 @@ rules:
   # China Area Network
   - RULE-SET,China,DIRECT
   # - RULE-SET,ChinaIP,DIRECT
+
+  - RULE-SET,Ad,REJECT
 
   # Local Area Network
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
