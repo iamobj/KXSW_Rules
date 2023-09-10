@@ -46,5 +46,6 @@ payload:
   - SRC-IP-CIDR,192.168.50.119/32
   # 自己添加的
   - DOMAIN-SUFFIX,neevo.ai
+  - DOMAIN-SUFFIX,supabase.co
   # 其它
   - DOMAIN-SUFFIX,nunuyy2.org
