@@ -639,6 +639,7 @@ payload:
   - DOMAIN-SUFFIX,stylelint.io
   - DOMAIN-SUFFIX,taipuxi.cn
   - DOMAIN-SUFFIX,ezc.e8q.cn
+  - DOMAIN-SUFFIX,f.e8q.cn
   - DOMAIN-SUFFIX,msftconnecttest.com
   - DOMAIN-SUFFIX,bing.net
   - DOMAIN-SUFFIX,clarity.ms
