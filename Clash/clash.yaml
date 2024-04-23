@@ -208,21 +208,21 @@ proxy-groups:
   #
 
   # 自动选择第一个，当第一个节点不可用时，自动选择下一个
-  - name: '自动节点选择'
-    type: fallback
-    proxies:
-    use:
-    url: 'http://www.gstatic.com/generate_204'
-    # url: 'http://www.apple.com/library/test/success.html'
-    # 300秒后重新测试延迟
-    interval: 300
+  # - name: '自动节点选择'
+  #   type: fallback
+  #   proxies:
+  #   use:
+  #   url: 'http://www.gstatic.com/generate_204'
+  #   # url: 'http://www.apple.com/library/test/success.html'
+  #   # 300秒后重新测试延迟
+  #   interval: 300
 
   # 代理节点选择
   - name: 'PROXY'
     type: select
     use:
     proxies:
-      - 自动节点选择
+      # - 自动节点选择
 
   - name: 'MATCH'
     type: select
