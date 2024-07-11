@@ -53,8 +53,6 @@ payload:
   - DOMAIN-SUFFIX,de.045692.xyz
   # 波兰代理主机地址
   - DOMAIN-SUFFIX,alejandracaiccedo.com
-  # cf work代理域名
-  - DOMAIN-SUFFIX,qifeip.rhc.im
   # 其它
   - DOMAIN-SUFFIX,nunuyy2.org
   - DOMAIN-SUFFIX,yj.szftfybj.com
