@@ -50,6 +50,7 @@ payload:
   - DOMAIN-SUFFIX,viyf.cys.world
   # #亚马逊美国代理节点，防止路由器开了代理，内网客户端单独开美国代理不是直连代理，导致延迟较高
   - DOMAIN-SUFFIX,us.045692.xyz
+  - DOMAIN-SUFFIX,us2.045692.xyz
   - DOMAIN-SUFFIX,de.045692.xyz
   - DOMAIN-KEYWORD,biliup
   # 波兰代理主机地址
