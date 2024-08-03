@@ -48,6 +48,7 @@ payload:
   - DOMAIN-SUFFIX,neevo.ai
   - DOMAIN-SUFFIX,picb.cc
   - DOMAIN-SUFFIX,viyf.cys.world
+  - DOMAIN-SUFFIX,ip123.in
   # #亚马逊美国代理节点，防止路由器开了代理，内网客户端单独开美国代理不是直连代理，导致延迟较高
   - DOMAIN-SUFFIX,us.045692.xyz
   - DOMAIN-SUFFIX,us2.045692.xyz
