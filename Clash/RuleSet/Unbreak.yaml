@@ -56,6 +56,8 @@ payload:
   - DOMAIN-KEYWORD,biliup
   # 波兰代理主机地址
   - DOMAIN-SUFFIX,alejandracaiccedo.com
+  # 王峰群的日本节点
+  - DOMAIN-SUFFIX,wfq-amd1.rhc.im
   # 其它
   - DOMAIN-SUFFIX,nunuyy2.org
   - DOMAIN-SUFFIX,yj.szftfybj.com
