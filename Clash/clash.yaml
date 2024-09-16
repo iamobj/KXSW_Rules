@@ -131,16 +131,15 @@ dns:
     - https://8.8.8.8/dns-query # 使用 DoH 加密 DNS 查询，这里使用 ip 地址，不使用域名，可以避免使用 default-nameserver 解析域名这个动作
     - https://1.12.12.12/dns-query
     - https://hk-hkg.doh.sb/dns-query
+    - https://doh.pub/dns-query
+    - https://120.53.53.53/dns-query
+    - https://doh.360.cn/dns-query
+    - https://223.6.6.6/dns-query
     # - 114.114.114.114 # default value
     # - 8.8.8.8 # default value
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
     - https://1.1.1.1/dns-query # DNS over HTTPS
     # - dhcp://en0 # dns from dhcp
-    - 180.76.76.76
-    - 180.184.1.1
-    - 180.184.2.2
-    - 114.114.114.114
-    - 119.29.29.29
 
   # When `fallback` is present, the DNS server will send concurrent requests
   # to the servers in this section along with servers in `nameservers`.
