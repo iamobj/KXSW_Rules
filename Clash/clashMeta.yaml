@@ -98,6 +98,10 @@ sniffer:
 tun:
   enable: true
   stack: mixed
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
 
 # 自动更新 GeoIP
 geo-auto-update: true
@@ -118,7 +122,10 @@ global-ua: clash.meta
 dns:
   enable: true
   listen: 0.0.0.0:1053
-  enhanced-mode: redir-host # redir-host fake-ip
+  enhanced-mode: fake-ip # redir-host fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '+.*'
 
   # These nameservers are used to resolve the DNS nameserver hostnames below.
   # Specify IP addresses only
