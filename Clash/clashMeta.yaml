@@ -117,7 +117,7 @@ global-ua: clash.meta
 # This section is optional. When not present, the DNS server will be disabled.
 dns:
   enable: true
-  listen: 0.0.0.0:53
+  listen: 0.0.0.0:1053
   enhanced-mode: redir-host # redir-host fake-ip
 
   # These nameservers are used to resolve the DNS nameserver hostnames below.
