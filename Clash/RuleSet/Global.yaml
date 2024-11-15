@@ -643,6 +643,7 @@ payload:
   - DOMAIN-SUFFIX,msftconnecttest.com
   - DOMAIN-SUFFIX,bing.net
   - DOMAIN-SUFFIX,clarity.ms
+  - DOMAIN-SUFFIX,tempmail100.com
 
   # 企业微信服务的 API，因为需要配置可信 ip，需要固定 ip，所以设置走代理，配置代理的 ip
   - DOMAIN,qyapi.weixin.qq.com
