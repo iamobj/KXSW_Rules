@@ -148,16 +148,16 @@ dns:
   # All DNS questions are sent directly to the nameserver, without proxies
   # involved. Clash answers the DNS question with the first result gathered.
   nameserver: # 这里最好使用公共 dns 服务器，不使用运营商的 dns 服务器，防止 dns 污染
-    - https://8.8.8.8/dns-query # 使用 DoH 加密 DNS 查询，这里使用 ip 地址，不使用域名，可以避免使用 default-nameserver 解析域名这个动作
-    - https://1.12.12.12/dns-query
-    - https://hk-hkg.doh.sb/dns-query
-    - https://doh.pub/dns-query
-    - https://120.53.53.53/dns-query
-    - https://doh.360.cn/dns-query
-    - https://223.6.6.6/dns-query
-    - https://1.1.1.1/dns-query
-    - tls://8.8.4.4
-    - tls://208.67.222.222
+    - https://8.8.8.8/dns-query#PROXY # 使用 DoH 加密 DNS 查询，这里使用 ip 地址，不使用域名，可以避免使用 default-nameserver 解析域名这个动作
+    - https://1.12.12.12/dns-query#PROXY
+    - https://hk-hkg.doh.sb/dns-query#PROXY
+    - https://doh.pub/dns-query#PROXY
+    - https://120.53.53.53/dns-query#PROXY
+    - https://doh.360.cn/dns-query#PROXY
+    - https://223.6.6.6/dns-query#PROXY
+    - https://1.1.1.1/dns-query#PROXY
+    - tls://8.8.4.4#PROXY
+    - tls://208.67.222.222#PROXY
 
 proxies:
 
