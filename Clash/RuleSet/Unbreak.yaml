@@ -19,7 +19,7 @@ payload:
   - DOMAIN,dl.l.google.com
   - DOMAIN,update.googleapis.com
   # >> Google Fonts API
-  - DOMAIN,fonts.googleapis.com
+  # - DOMAIN,fonts.googleapis.com
   - DOMAIN,fonts.gstatic.com
   # >> Firebase Cloud Messaging
   - DOMAIN,mtalk.google.com
