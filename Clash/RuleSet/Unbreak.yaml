@@ -65,3 +65,5 @@ payload:
   - DOMAIN-SUFFIX,gantanhao.com
   - DOMAIN-SUFFIX,sscha.com
   - DOMAIN-SUFFIX,f.e8q.cn
+  # supabase数据地址直连延迟更低
+  - DOMAIN,aws-0-ap-southeast-1.pooler.supabase.com
