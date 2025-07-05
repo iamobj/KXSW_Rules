@@ -83,8 +83,8 @@ global-client-fingerprint: random
 # 域名嗅探
 sniffer:
   enable: true
-  force-dns-mapping: true
-  parse-pure-ip: true
+  # force-dns-mapping: true
+  # parse-pure-ip: true
   skip-domain:
     - Mijia Cloud
   sniff:
