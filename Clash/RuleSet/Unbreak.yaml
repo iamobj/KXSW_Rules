@@ -69,3 +69,8 @@ payload:
   - DOMAIN,aws-0-ap-southeast-1.pooler.supabase.com
   # 始皇的 deeplx 服务
   - DOMAIN,api.deeplx.org
+  # easytier 中转节点 https://easytier.gd.nkbpal.cn/status/easytier
+  - DOMAIN,public.easytier.top
+  - IP-CIDR,39.108.52.138/32
+  - IP-CIDR,8.148.29.206/32
+  - DOMAIN,turn.js.629957.xyz
