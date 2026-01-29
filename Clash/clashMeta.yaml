@@ -161,6 +161,16 @@ dns:
     - tls://8.8.4.4#PROXY
     - tls://208.67.222.222#PROXY
 
+  # 解析代理节点服务器，因为 nameserver 都是用代理请求，这个一定要配置，否则会出现代理节点连不上，导致dns解析不出，这里可以配置域名的，因为 default-nameserver 能解析
+  proxy-server-nameserver:
+    - https://223.5.5.5/dns-query
+    - https://223.6.6.6/dns-query
+    - https://8.8.8.8/dns-query
+    - https://1.12.12.12/dns-query
+    - https://120.53.53.53/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.360.cn/dns-query
+
 proxies:
 
 # 服务器节点订阅
