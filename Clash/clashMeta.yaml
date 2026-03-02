@@ -83,7 +83,7 @@ global-client-fingerprint: random
 # 域名嗅探
 sniffer:
   enable: true
-  force-dns-mapping: true
+  force-dns-mapping: false # 设为true，会导致套了cf的网站都嗅探为cf的域名然后走代理，不便于规则分流，所以设为false
   parse-pure-ip: true
   override-destination: false # 不使用嗅探结果作为实际访问，嗅探的域名会作为规则匹配，但实际访问还是原来的。开启会有问题，比如所有套了 cloudflare cdn 的网站，都会在嗅探重写为 cloudflare-ech.com，导致原域名分流规则失效，如果有问题一定要开启，可以配置 skip-domain 来防止一些域名被重写。比如 api.deeplx.org
   skip-domain:
