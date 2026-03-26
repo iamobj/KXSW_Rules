@@ -246,6 +246,13 @@ rule-providers:
     url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Ad.yaml
     interval: 86400
 
+  Reject:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Reject.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Reject.yaml
+    interval: 86400
+
 # 规则
 rules:
   # Unbreak
@@ -264,6 +271,7 @@ rules:
   # - RULE-SET,ChinaIP,DIRECT
 
   - RULE-SET,Ad,REJECT
+  - RULE-SET,Reject,REJECT
 
   # Local Area Network
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve

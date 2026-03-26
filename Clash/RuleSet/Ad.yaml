@@ -214,6 +214,3 @@ payload:
   - IP-CIDR,27.221.89.128/28,no-resolve
   - IP-CIDR,60.211.171.128/29,no-resolve
   - IP-CIDR,60.211.211.1/32,no-resolve
-
-  # apifox 投毒事情上报域名
-  - DOMAIN-SUFFIX,apifox.it.com

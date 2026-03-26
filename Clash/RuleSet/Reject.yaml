@@ -1,0 +1,7 @@
+# 需要拒绝的规则，比如恶意病毒网址
+payload:
+  # apifox 投毒事情上报域名
+  - DOMAIN-SUFFIX,apifox.it.com
+
+  - DOMAIN-SUFFIX,cdn.openroute.dev
+  - DOMAIN-SUFFIX,upgrade.feishu.it.com
