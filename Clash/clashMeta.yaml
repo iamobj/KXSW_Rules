@@ -246,11 +246,11 @@ rule-providers:
     url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Ad.yaml
     interval: 86400
 
-  CustomReject:
+  Toxic:
     type: http
     behavior: classical
-    path: ./RuleSet/CustomReject.yaml
-    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/CustomReject.yaml
+    path: ./RuleSet/Toxic.yaml
+    url: https://raw-github.rhc.im/iamobj/KXSW_Rules/m/Clash/RuleSet/Toxic.yaml
     interval: 86400
 
 # 规则
@@ -271,7 +271,7 @@ rules:
   # - RULE-SET,ChinaIP,DIRECT
 
   - RULE-SET,Ad,REJECT
-  - RULE-SET,CustomReject,REJECT
+  - RULE-SET,Toxic,REJECT
 
   # Local Area Network
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
