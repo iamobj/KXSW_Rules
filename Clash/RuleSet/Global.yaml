@@ -672,3 +672,10 @@ payload:
   - DOMAIN-SUFFIX,paypal.com
   - DOMAIN-SUFFIX,paypal.me
   - DOMAIN-SUFFIX,paypalobjects.com
+
+  # okkproxy住宅代理网关
+  - IP-CIDR,43.166.128.48/32,Proxy,no-resolve
+  - IP-CIDR,43.153.52.244/32,Proxy,no-resolve
+  - IP-CIDR,49.51.189.254/32,Proxy,no-resolve
+  - IP-CIDR,43.157.66.4/32,Proxy,no-resolve
+  - IP-CIDR,45.78.212.125/32,Proxy,no-resolve
