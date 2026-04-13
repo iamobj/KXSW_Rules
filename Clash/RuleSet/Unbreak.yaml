@@ -53,7 +53,6 @@ payload:
   - DOMAIN-SUFFIX,us.045692.xyz
   - DOMAIN-SUFFIX,us2.045692.xyz
   - DOMAIN-SUFFIX,de.045692.xyz
-  - DOMAIN-KEYWORD,biliup
   # 波兰代理主机地址
   - DOMAIN-SUFFIX,alejandracaiccedo.com
   # 王峰群的日本节点
