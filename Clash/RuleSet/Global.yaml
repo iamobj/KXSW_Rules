@@ -674,7 +674,7 @@ payload:
   - DOMAIN-SUFFIX,paypalobjects.com
 
   # openai
-  - DOMAIN-SUFFIX,openai.com
+  - GEOSITE,openai
 
   # okkproxy住宅代理网关
   - IP-CIDR,43.166.128.48/32,Proxy,no-resolve
