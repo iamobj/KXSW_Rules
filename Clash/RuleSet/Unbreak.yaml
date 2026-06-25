@@ -75,3 +75,5 @@ payload:
   - DOMAIN,turn.js.629957.xyz
 
   - DOMAIN,kakaovo.art
+
+  - DOMAIN-SUFFIX,cncbinternational.com # 中信银行国际，用直连快一点
